@@ -1,2 +1,2 @@
 # BlazorServer.6.2
-## 4 style  patch data 
+## 4 style  get data at ServerSide
