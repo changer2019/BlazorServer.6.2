@@ -1,0 +1,55 @@
+﻿@page "/"
+@page "/counter"
+
+@using WebApp.Models
+@using BootstrapServerSide.Shared.Data
+
+@*
+@inject ProductControlls ProductService
+@inject ProductsService p
+*@
+
+
+
+<h1>@title</h1>
+<button @onclick="GetProduct">拉数据 </button>
+<button @onclick="QueryData"> 拉数据2 </button>
+<button @onclick="QueryData2"> 拉数据3 </button>
+
+@if(products2 is null)
+{
+
+    title = "正在载入中...";
+
+}
+
+
+@if (products2 is not  null)
+{
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>名称</th>
+                <th>价格</th>                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in products2)
+            {
+                <tr>
+                    <td>@item.ProductId</td>
+                    <td>@item.Name</td>
+                    <td>@item.Price</td>
+                    
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code
+{
+
+}
